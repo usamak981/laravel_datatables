@@ -52,7 +52,7 @@ class AdminInvoiceController extends Controller
 
 
         if(Auth::check()){
-            $users = User::all();
+        $users = User::orderBy('name', 'ASC')->get();
         return view('admin.invoices.index')->with('users', $users);
         }
 
